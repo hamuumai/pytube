@@ -1,0 +1,12 @@
+#!/usr/local/bin/python3
+# -*- coding: utf-8 -*-
+
+from pytube import YouTube
+import sys
+
+if len( sys.argv ) != 2:
+     print( "引数の数に謝りがあります。")
+     sys.exit()
+
+download_link = sys.argv[1]
+YouTube( download_link ).streams.first().download()
